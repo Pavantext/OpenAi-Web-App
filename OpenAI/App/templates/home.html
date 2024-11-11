@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Welcome to Script Creator App</h1>
+        <p>This is your one-stop solution for creating and managing scripts with AI assistance.</p>
+        
+        {% if user.is_authenticated %}
+            <p>Hello, {{ user.username }}! You are logged in.</p>
+            <a href="{% url 'dashboard' %}" class="btn btn-primary">Go to Dashboard</a>
+            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+        {% else %}
+            <p>Please log in or sign up to start using the app.</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+            <a href="{% url 'signup' %}" class="btn btn-secondary">Sign Up</a>
+        {% endif %}
+    </div>
+</body>
+</html>
