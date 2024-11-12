@@ -8,4 +8,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('dashboard/', views.dashboard_view, name='dashboard'),
     path('', views.home_view, name='home'),
+    path('create-script/', views.create_script_view, name='create_script'),
 ]
